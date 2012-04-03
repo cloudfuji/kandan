@@ -5,10 +5,9 @@ class Kandan.Broadcasters.FayeBroadcaster
     @faye_client.disable('websocket')
     authExtension = {
       outgoing: (message, callback)->
-        if message.channel == "/meta/subscribe"
-          message['ext'] = {
-            auth_token: Kandan.Helpers.Users.currentUser().auth_token
-          }
+        message['ext'] = {
+          auth_token: Kandan.Helpers.Users.currentUser().auth_token
+        }
         callback(message)
     }
     @faye_client.addExtension(authExtension)
@@ -37,3 +36,7 @@ class Kandan.Broadcasters.FayeBroadcaster
     subscription.errback(()->
       alert "Oops! could not connect to the server"
     )
+
+  publish: (activityAttributes)->
+    console.log "publishing...", activityAttributes
+    @faye_client.publish "/channels/#{activityAttributes.channel_id}", activityAttributes

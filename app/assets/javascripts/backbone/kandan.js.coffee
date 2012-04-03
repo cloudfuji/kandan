@@ -33,8 +33,8 @@ window.Kandan =
       Kandan.Plugins.register "Kandan.Plugins.#{plugin}"
 
   initBroadcasterAndSubscribe: ()->
-    window.broadcaster = new Kandan.Broadcasters.FayeBroadcaster()
-    window.broadcaster.subscribe "/channels/*"
+    Kandan.broadcaster = new Kandan.Broadcasters.FayeBroadcaster()
+    Kandan.broadcaster.subscribe "/channels/*"
 
   initTabs: ()->
     $('#channels').tabs({

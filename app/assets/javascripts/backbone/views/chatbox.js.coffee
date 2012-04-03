@@ -16,15 +16,14 @@ class Kandan.Views.Chatbox extends Backbone.View
 
   postMessage: (event)->
     $chatbox = $(event.target).parent().find(".chat-input")
-    activity = new Kandan.Models.Activity({
+    activityAttributes = {
       'content':    $chatbox.val(),
-      'action':     'message',
       'channel_id': @channel.get('id')
-    })
+    }
 
-    activity.save({},{success: ()=>
-      $chatbox.val("")
-    })
+    Kandan.broadcaster.publish activityAttributes
+    # TODO might have to be in some success callback
+    $chatbox.val("")
 
   render: ()->
     @channel = @options.channel
