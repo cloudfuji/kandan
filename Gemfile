@@ -10,8 +10,8 @@ gem 'pg'
 
 # Auth/Bushido gems
 gem 'devise'
-gem 'devise_bushido_authenticatable'
-gem 'bushido'
+gem 'devise_cloudfuji_authenticatable'
+gem 'cloudfuji'
 
 # Server/transport gems
 gem 'thin'

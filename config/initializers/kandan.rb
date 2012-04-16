@@ -5,13 +5,13 @@ end
 module Kandan
   def self.devise_modules
 
-    standard = [:database_authenticatable, :registerable,
+    standard  = [:database_authenticatable, :registerable,
                 :recoverable, :rememberable, :trackable, :validatable,
                 :token_authenticatable]
 
-    bushido = [:bushido_authenticatable, :trackable,
+    cloudfuji = [:cloudfuji_authenticatable, :trackable,
                :token_authenticatable]
 
-    ::Bushido::Platform.on_bushido? ? bushido : standard
+    ::Cloudfuji::Platform.on_cloudfuji? ? cloudfuji : standard
   end
 end
