@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Core gems
 gem 'rails', '3.2.11'
 
-group :development, :test do  
+group :development, :test do
   gem 'sqlite3'
   gem 'guard'
   gem 'guard-rspec'
@@ -28,9 +28,6 @@ gem 'aws-sdk'
 gem 'cloudfuji_paperclip'
 gem 'remotipart'
 gem 'jquery-rails'
-
-# Making the world a better, more stable place
-gem 'airbrake'
 
 # Gems used only for assets and not required
 # in production environments by default.
