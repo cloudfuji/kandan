@@ -4,7 +4,6 @@ class Kandan.Helpers.Utils
   @browserTabFocused: true
 
   @notifyInTitleIfRequired: (activityAttributes) ->
-    console.log(activityAttributes)
 
     if Kandan.Data.Channels.activeChannelId() == activityAttributes.channel_id and activityAttributes.action == "message" and @browserTabFocused != true
       Kandan.Plugins.MusicPlayer.playAudioNotice()

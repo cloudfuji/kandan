@@ -102,7 +102,6 @@ class Kandan.Plugins.Attachments
         $(".dropzone").text("Uploading...")
 
       uploadFinished: (i, file, response, time)->
-        console.log "Upload finished!"
 
       error: (err, file)->
         if err == "BrowserNotSupported"
@@ -120,11 +119,9 @@ class Kandan.Plugins.Attachments
           Kandan.Widgets.render "Kandan.Plugins.Attachments"
 
       dragOver: ->
-        console.log "reached dropzone!"
         $(".dropzone").text("UPLOAD!")
 
       dragLeave: ->
-        console.log "left dropzone!"
         $(".dropzone").text("Drop file here to upload")
     })
 

@@ -119,7 +119,6 @@ class Kandan.Helpers.Channels
     belongsToCurrentUser = ( activityAttributes.user.id == Kandan.Data.Users.currentUser().id )
     activityExists       = ( $("#activity-#{activityAttributes.id}").length > 0 )
     local = local || false
-    console.log !local, !belongsToCurrentUser, !activityExists
 
     if local || (!local && !belongsToCurrentUser && !activityExists)
       @channelActivitiesEl(activityAttributes.channel_id)
@@ -142,7 +141,6 @@ class Kandan.Helpers.Channels
 
   @setPaginationState: (channelId, moreActivities, oldest)->
     @channelPaginationEl(channelId).data("oldest", oldest)
-    console.log "pagination element", moreActivities, @channelPaginationEl(channelId)
     if moreActivities == true
       @channelPaginationEl(channelId).show()
     else
