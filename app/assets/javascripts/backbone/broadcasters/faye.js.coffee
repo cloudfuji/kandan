@@ -14,10 +14,8 @@ class Kandan.Broadcasters.FayeBroadcaster
     @fayeClient.addExtension(authExtension)
 
     @fayeClient.bind "transport:down", ()->
-      console.log "Comm link to Cybertron is down!"
 
     @fayeClient.bind "transport:up", ()->
-      console.log "Comm link is up!"
 
     @fayeClient.subscribe "/app/activities", (data)=>
       [entityName, eventName] = data.event.split("#")
@@ -45,6 +43,5 @@ class Kandan.Broadcasters.FayeBroadcaster
     subscription = @fayeClient.subscribe channel, (data)=>
       Kandan.Helpers.Channels.addActivity(data, Kandan.Helpers.Activities.ACTIVE_STATE)
     subscription.errback((data)->
-      console.log "error", data
       alert "Oops! could not connect to the server"
     )
