@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20120404114631) do
     t.integer  "user_id"
     t.integer  "channel_id"
     t.integer  "message_id"
-    t.string   "file_file_name"
+    t.string   "file"
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
@@ -51,29 +51,25 @@ ActiveRecord::Schema.define(:version => 20120404114631) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                 :default => "",   :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "",   :null => false
+    t.string   "email",                  :default => "",   :null => false
+    t.string   "encrypted_password",     :default => "",   :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                         :default => 0
+    t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "authentication_token"
-    t.text     "first_name"
-    t.text     "last_name"
-    t.text     "ido_id"
-    t.string   "locale"
-    t.datetime "created_at",                                              :null => false
-    t.datetime "updated_at",                                              :null => false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
     t.text     "gravatar_hash"
-    t.boolean  "active",                                :default => true
+    t.boolean  "active",                 :default => true
   end
 
-  add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["ido_id"], :name => "index_users_on_ido_id", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
