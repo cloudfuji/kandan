@@ -22,5 +22,4 @@
 /tmp
 
 /config/database.yml
-/config/initializers/carrierwave.rb
 /public/uploads/tmp/
