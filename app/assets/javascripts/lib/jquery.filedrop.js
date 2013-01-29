@@ -81,7 +81,7 @@
       files_count = files.length;
       upload();
     });
-    
+
     function drop(e) {
         opts.drop(e);
         files = e.dataTransfer.files;

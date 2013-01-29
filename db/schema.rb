@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120404114631) do
+ActiveRecord::Schema.define(:version => 20130129125023) do
 
   create_table "activities", :force => true do |t|
     t.text     "content"
@@ -27,11 +27,8 @@ ActiveRecord::Schema.define(:version => 20120404114631) do
     t.integer  "channel_id"
     t.integer  "message_id"
     t.string   "file"
-    t.string   "file_content_type"
-    t.integer  "file_file_size"
-    t.datetime "file_updated_at"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "channels", :force => true do |t|
