@@ -49,35 +49,18 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.2.7)
-    airbrake (3.0.9)
-      activesupport
-      builder
     arel (3.0.2)
-    aws-sdk (1.3.8)
-      httparty (~> 0.7)
-      json (~> 1.4)
-      nokogiri (<= 1.5.0)
-      uuidtools (~> 2.1)
     bcrypt-ruby (3.0.1)
     bourbon (1.4.0)
       sass (>= 3.1)
     bourne (1.1.2)
       mocha (= 0.10.5)
     builder (3.0.4)
+    carrierwave (0.6.2)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
-    cloudfuji (0.0.39)
-      highline (>= 1.6.1)
-      json (>= 1.4.6)
-      orm_adapter (~> 0.0.3)
-      rest-client (>= 1.6.1)
-    cloudfuji_paperclip (3.0.3)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (>= 0.0.2)
-      mime-types
-    cocaine (0.2.1)
     coderay (1.0.8)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -92,9 +75,6 @@ GEM
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       warden (~> 1.1)
-    devise_cloudfuji_authenticatable (1.0.5)
-      devise (= 1.5.3)
-      rubycas-client (>= 2.2.1)
     diff-lcs (1.1.3)
     eco (1.0.0)
       coffee-script
@@ -108,6 +88,7 @@ GEM
     erubis (2.7.0)
     escape_utils (0.2.4)
     eventmachine (0.12.10)
+    excon (0.13.4)
     execjs (1.3.0)
       multi_json (~> 1.0)
     factory_girl (3.1.0)
@@ -116,6 +97,17 @@ GEM
       factory_girl (~> 3.1.0)
       railties (>= 3.0.0)
     ffi (1.3.0)
+    fog (1.3.1)
+      builder
+      excon (~> 0.13.0)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0)
+      net-scp (~> 1.0.4)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5.0)
+      ruby-hmac
+    formatador (0.2.3)
     guard (1.6.1)
       listen (>= 0.6.0)
       lumberjack (>= 1.0.2)
@@ -124,11 +116,7 @@ GEM
     guard-rspec (2.3.3)
       guard (>= 1.1)
       rspec (~> 2.11)
-    highline (1.6.11)
     hike (1.2.1)
-    httparty (0.8.1)
-      multi_json
-      multi_xml
     i18n (0.6.1)
     jasmine-core (1.3.1)
     journey (1.0.4)
@@ -155,8 +143,10 @@ GEM
     mocha (0.10.5)
       metaclass (~> 0.0.1)
     multi_json (1.5.0)
-    multi_xml (0.4.2)
-    nokogiri (1.5.0)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-ssh (2.5.2)
+    nokogiri (1.5.5)
     orm_adapter (0.0.6)
     pg (0.12.2)
     polyglot (0.3.3)
@@ -190,8 +180,6 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     remotipart (1.0.2)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
@@ -207,8 +195,7 @@ GEM
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
       rspec-mocks (~> 2.12.0)
-    rubycas-client (2.3.8)
-      activesupport
+    ruby-hmac (0.4.0)
     rubyzip (0.9.9)
     sass (3.1.15)
     sass-rails (3.2.4)
@@ -229,7 +216,6 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sqlite3 (1.3.6)
     thin (1.3.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -243,7 +229,6 @@ GEM
     uglifier (1.2.3)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
-    uuidtools (2.1.2)
     warden (1.1.1)
       rack (>= 1.0)
     websocket (1.0.6)
@@ -254,28 +239,24 @@ PLATFORMS
 
 DEPENDENCIES
   _bushido-faye (= 0.8.2)
-  airbrake
-  aws-sdk
   bourbon
-  cloudfuji
-  cloudfuji_paperclip
+  carrierwave
   coffee-rails (~> 3.2.1)
   devise
-  devise_cloudfuji_authenticatable
   eco
   execjs
   factory_girl_rails (~> 3.0)
+  fog (~> 1.3.1)
   guard
   guard-rspec
   jasmine!
   jquery-rails
   kaminari
-  pg (= 0.12.2)
+  pg
   rails (= 3.2.11)
   remotipart
   rspec-rails
   sass-rails (~> 3.2.3)
   shoulda-matchers
-  sqlite3
   thin
   uglifier (>= 1.0.3)

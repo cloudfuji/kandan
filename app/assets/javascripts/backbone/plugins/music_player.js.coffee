@@ -16,7 +16,6 @@ class Kandan.Plugins.MusicPlayer
 
 
   @setError: (errorMessage)->
-    console.log "music player error", errorMessage
 
 
   @createSongList: (songs)->
@@ -70,7 +69,6 @@ class Kandan.Plugins.MusicPlayer
 
         @playUrl(message.channel_id, soundUrl)
       else
-        console.log "Not playing stale song"
 
       message.content = @playTemplate({url: url})
       return Kandan.Helpers.Activities.buildFromBaseTemplate message

@@ -32,8 +32,8 @@ namespace :kandan do
       ].each do |message|
         a = Activity.new
         a.content    = message
-        a.channel_id = Channel.first
-        a.user_id    = User.first
+        a.channel_id = Channel.first.id
+        a.user_id    = User.first.id
         a.action     = "message"
         a.save!
       end

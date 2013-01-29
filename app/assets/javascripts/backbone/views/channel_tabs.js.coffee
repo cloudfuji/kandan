@@ -33,7 +33,6 @@ class Kandan.Views.ChannelTabs extends Backbone.View
         success: (model)->
           Kandan.Helpers.Channels.createChannelArea(model)
       })
-      console.log "create channel: #{channelName}"
     return false
 
   deleteChannel: (event)->
