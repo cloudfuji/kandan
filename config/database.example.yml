@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  host: localhost
+  database: kandan_development
+  pool: 5
+  timeout: 5000
+  host: localhost
+
+test:
+  adapter: postgresql
+  host: localhost
+  database: kandan_development
+  pool: 5
+  timeout: 5000
+  host: localhost
