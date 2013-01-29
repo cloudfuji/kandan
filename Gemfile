@@ -4,6 +4,7 @@ gem 'rails', '3.2.11'
 gem 'pg'
 gem 'devise'
 gem 'carrierwave'
+gem "fog", "~> 1.3.1"
 gem 'thin'
 gem '_bushido-faye', '0.8.2'
 gem 'kaminari'
