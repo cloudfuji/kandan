@@ -9,7 +9,7 @@ group :development, :test do
   gem 'guard-rspec'
 end
 # Database adapters
-gem 'pg', '0.12.2'
+gem 'pg'
 # Uncomment this is you want to use sqlite locally
 # gem 'sqlite3'
 
