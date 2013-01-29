@@ -5,7 +5,7 @@ class CreateAttachments < ActiveRecord::Migration
       t.references :channel
       t.references :message
 
-      t.string     :file_file_name
+      t.string     :file
       t.string     :file_content_type
       t.integer    :file_file_size
       t.datetime   :file_updated_at
