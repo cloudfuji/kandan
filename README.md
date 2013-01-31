@@ -22,7 +22,7 @@ SHUT UP AND LET ME USE IT
 =========================
 
 ## Cloud Foundry
-You'll need a [Cloud Foundry account](https://my.cloudfoundry.com/signup) and the [vmc gem](https://rubygems.org/gems/vmc) installed. Do you `vmc target <cloud foundry host>` and `vmc login`, and then this will get you up and running:
+You'll need a [Cloud Foundry account](https://my.cloudfoundry.com/signup) and the [vmc gem](https://rubygems.org/gems/vmc) installed. Do your `vmc target <cloud foundry host>` and `vmc login`, and then this will get you up and running:
 
     git clone https://github.com/cloudfuji/kandan.git
     cd kandan
