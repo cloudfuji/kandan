@@ -31,10 +31,10 @@ namespace :kandan do
        "Oh, sorry, one last thing - be sure to join the mailing list at https://groups.google.com/forum/?fromgroups#!forum/cloudfuji so you know there's a new release of Kandan!"
       ].each do |message|
         a = Activity.new
-        a.content    = message
-        a.channel_id = Channel.first
-        a.user_id    = User.first
-        a.action     = "message"
+        a.content = message
+        a.channel = Channel.first
+        a.user    = User.first
+        a.action  = "message"
         a.save!
       end
     end
